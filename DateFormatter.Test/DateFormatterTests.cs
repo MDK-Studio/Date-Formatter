@@ -13,7 +13,7 @@ namespace FormatHelper.Test
       var pastDate = DateTime.Now;
       var presentDate = GetPresentDateTime(minutes: 5);
 
-      var result = formatter.GetLastSeenFormat(pastDate, presentDate);
+      var result = formatter.GetLastActive(pastDate, presentDate);
 
       Assert.AreEqual("Minutes ago", result, "When time is less than 5 minutes difference you should see minutes ago");
     }
@@ -25,7 +25,7 @@ namespace FormatHelper.Test
       var pastDate = DateTime.Now;
       var presentDate = GetPresentDateTime(minutes: 30);
 
-      var result = formatter.GetLastSeenFormat(pastDate, presentDate);
+      var result = formatter.GetLastActive(pastDate, presentDate);
 
       Assert.AreEqual("Less than hour ago", result, "When time is less than 30 minutes difference you should see Hour ago");
     }
@@ -40,7 +40,7 @@ namespace FormatHelper.Test
       var pastDate = DateTime.Now;
       var presentDate = GetPresentDateTime(hours: hours);
 
-      var result = formatter.GetLastSeenFormat(pastDate, presentDate);
+      var result = formatter.GetLastActive(pastDate, presentDate);
 
       Assert.AreEqual(expectedFormat, result, $"Expected time of {hours} hours difference to say {expectedFormat}");
     }
@@ -53,7 +53,7 @@ namespace FormatHelper.Test
       var pastDate = DateTime.Now;
       var presentDate = GetPresentDateTime(days: days);
 
-      var result = formatter.GetLastSeenFormat(pastDate, presentDate);
+      var result = formatter.GetLastActive(pastDate, presentDate);
 
       Assert.AreEqual(expectedFormat, result, $"Expected time of {days} days difference to say {expectedFormat}");
     }
@@ -65,7 +65,7 @@ namespace FormatHelper.Test
       var pastDate = DateTime.Now;
       var presentDate = GetPresentDateTime();
 
-      var result = formatter.GetLastSeenFormat(pastDate, presentDate);
+      var result = formatter.GetLastActive(pastDate, presentDate);
 
       Assert.AreEqual("Just now", result, "When time is less than a minute, should say Just now");
     }

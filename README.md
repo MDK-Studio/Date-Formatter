@@ -1,6 +1,6 @@
 # Date Formatter
 
-This project contains a date formatter that currently formats only into the Last Seen format. Last seen formats works as follows. Given two dates (lastActiveDate and DateTime.Now) the strings produced are the following:
+This project contains a date formatter that currently formats only into the **Last Active** format. **Last Active** format works as follows. Given two dates (lastActiveDate and DateTime.Now) the strings produced are the following:
 
 - **Just Now**: If time difference is less than a minute
 - **Minutes ago**: If time difference is more than 1 minute, less than 5
@@ -27,7 +27,7 @@ Right-click your project solution -> Add -> Existing Project
 Browse to DateFormatter and select the project.
 ```
 
-Once added the last seen functionality can be used as follows.
+Once added the last active functionality can be used as follows.
 
 ```
 using FormatHelper;
@@ -35,14 +35,14 @@ using FormatHelper;
 ...
 
 var dateFormatter = new DateFormatter();
-var formattedString = dateFormatter.GetLastSeenFormat(lastActiveDate,
+var formattedString = dateFormatter.GetLastActive(lastActiveDate,
                                                       DateTime.Now);
 
 ```
 An interface is also included, which can be registered in you IoC and injected where needed. When injected use the formatter as follows.
 
 ```
-var formattedString = _dateFormatter.dateFormatter.GetLastSeenFormat(lastActiveDate, DateTime.Now);
+var formattedString = _dateFormatter.dateFormatter.GetLastActive(lastActiveDate, DateTime.Now);
 
 ```
 

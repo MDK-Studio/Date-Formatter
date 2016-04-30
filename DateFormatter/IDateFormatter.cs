@@ -4,6 +4,6 @@ namespace FormatHelper
 {
   public interface IDateFormatter
   {
-    string GetLastSeenFormat(DateTime pastDate, DateTime presentDate);
+    string GetLastActive(DateTime pastDate, DateTime presentDate);
   }
 }

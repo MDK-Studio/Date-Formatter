@@ -19,7 +19,7 @@ namespace FormatHelper
       };
     }
 
-    public string GetLastSeenFormat(DateTime pastDate, DateTime presentDate)
+    public string GetLastActive(DateTime pastDate, DateTime presentDate)
     {
       var timespanDifference = presentDate.Subtract(pastDate);
 
