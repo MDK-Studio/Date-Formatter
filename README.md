@@ -1,4 +1,4 @@
-# Project Title
+# Date Formatter
 
 This project contains a date formatter that currently formats only into the Last Seen format. Last seen formats works as follows. Given two dates (lastActiveDate and DateTime.Now) the strings produced are the following:
 
